@@ -1,0 +1,71 @@
+<head>
+  <style>
+    /* Styles to add borders to the table and its cells */
+    table {
+        width: 100%; /* Optional: makes the table take the full width of the container */
+        border-collapse: collapse; /* Collapses the border between cells */
+    }
+    th, td {
+        border: 1px solid black; /* Sets a black border with 1px width */
+        padding: 8px; /* Adds space between the cell content and its borders */
+        text-align: left; /* Aligns text to the left, you can change as needed */
+    }
+</style>
+</head>
+<body>
+  <h1>Real-Time App</h1>
+
+  <div id="registerForm">
+    <h2>Register</h2>
+    <form id="register">
+      <input type="text" id="registerUsername" placeholder="Username" required />
+      <input type="password" id="registerPassword" placeholder="Password" required />
+      <input type="text" id="referralCodeRegister" placeholder="Referral Code (optional)" />
+      
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <div id="loginForm">
+    <h2>Login</h2>
+    <form id="login">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <div id="mainApp" style="display: none;">
+    <h3 id="welcomeMessage"></h3>
+    <p id="userReferralCode" style="display: none; font-weight: bold;"></p>
+    
+
+    <button id="logout">Logout</button>
+  </div>
+
+  <div id="buyForm" style="display: none;">
+      <h2>Make a Purchase</h2>
+      <form id="purchaseForm">
+        <input type="number" id="amount" placeholder="Purchase Amount" required />
+        <button type="submit">Buy</button>
+      </form>
+  </div>
+  <h1>Real-Time User Profits</h1>
+  <table id="profitTable">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Leg</th>
+            <th>Purchase Made By Leg</th>
+            <th>Profit Earned</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Data will be dynamically inserted here -->
+    </tbody>
+</table>
+    
+  <script src="/socket.io/socket.io.js"></script>
+  
+  <script src="script.js"></script>
+</body>
